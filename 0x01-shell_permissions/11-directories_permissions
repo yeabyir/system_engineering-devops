@@ -1,2 +1,5 @@
 #!/bin/bash
-find . -mindepth 1 -type d -exec chmod ugo+x {} \;
+for dir in */
+do
+    chmod a+x "$dir"
+done
