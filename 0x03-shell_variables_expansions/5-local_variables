@@ -1,2 +1,2 @@
 #!/bin/bash
-{ declare -p; printenv; declare -f; } | awk -F= '/^[^=]+=/ {print $1}' | grep -v "^BASH_" | sort -u
+{ declare -p  printenv  declare -f} | awk -F= '/^[^=]+=/ {print $1}' | sort -u
