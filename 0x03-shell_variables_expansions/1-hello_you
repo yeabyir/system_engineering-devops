@@ -1,3 +1,2 @@
 #!/bin/bash
-# Prints "hello [current_user]"
-echo "hello $(whoami)"
+# Prints "hello [current_user]" echo "hello $(whoami)"
