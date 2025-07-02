@@ -1,6 +1,2 @@
 #!/bin/bash
-{
-    declare -p
-    printenv
-    declare -f
-} | grep -v '^declare -[a-zA-Z]* [a-zA-Z_]*[0-9]*=' | sort
+{ declare -p; printenv; declare -f; } | awk -F= '/^[^=]+=/ {print $1}' | grep -v "^BASH_" | sort -u
