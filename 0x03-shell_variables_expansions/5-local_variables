@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello MyUser" | awk '{print $0 "\n" length($0) " chars long"}'
+name="MyUser"  echo "hello $name"
