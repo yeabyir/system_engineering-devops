@@ -1,2 +1,2 @@
 #!/bin/bash
-{ declare -p  printenv  declare -f} | awk -F= '/^[^=]+=/ {print $1}' | sort -u
+echo "hello MyUser" | awk '{print $0 "\n" length($0) " chars long"}'
