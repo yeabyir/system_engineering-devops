@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays lines containing 'bash' from process list
+# shellcheck disable=SC2009
+ps aux | grep bash
