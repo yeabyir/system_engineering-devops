@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Stops 4-to_infinity_and_beyond without using kill/killall
+
+# Find the PID of the target process
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Verify process exists
+if [ -z "$pid" ]; then
+    echo "No 4-to_infinity_and_beyond process found" >&2
+    exit 1
+fi
+
+# Stop the process by sending TERM signal through procfs
+echo 15 > "/proc/$pid/status" 2>/dev/null || {
+    echo "Failed to terminate process $pid" >&2
+    exit 1
+}
